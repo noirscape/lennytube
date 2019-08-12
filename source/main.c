@@ -68,7 +68,7 @@ int main(int argc, char* argv[])
     } else {
         printf(CONSOLE_GREEN "Press A to start YouTube (needed if you manually exited).\n\n");
     }
-    printf(CONSOLE_RESET "Copyright (c) Valentijn \"noirscape\" V., 2019\n\nReleased under the GPLv3. Not licensable under later versions and clause 7b and 7c are in effect.");
+    printf(CONSOLE_RESET "Copyright (c) Valentijn \"noirscape\" V., 2019\n\nReleased under the AGPLv3.\nNot licensable under later versions and clause 7b and 7c are in effect.");
 
     if (isApp)
         openYoutube();
