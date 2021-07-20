@@ -55,7 +55,12 @@ void openYoutube()
 // Main program entrypoint
 int main(int argc, char* argv[])
 {
+    PadState pad;
+
     consoleInit(NULL);
+
+    padConfigureInput(8, HidNpadStyleSet_NpadFullCtrl);
+    padInitializeDefault(&pad);
 
     printf("Lennytube\n\nPress PLUS to close.\n");
 
@@ -76,16 +81,16 @@ int main(int argc, char* argv[])
     while (appletMainLoop())
     {
         // Scan all the inputs. This should be done once for each frame
-        hidScanInput();
+        padUpdate(&pad);
 
         // hidKeysDown returns information about which buttons have been
         // just pressed in this frame compared to the previous one
-        u64 kDown = hidKeysDown(CONTROLLER_P1_AUTO);
+        u64 kDown = padGetButtonsDown(&pad);
 
-        if (kDown & KEY_PLUS)
+        if (kDown & HidNpadButton_Plus)
             break;
 
-        if (kDown & KEY_A)
+        if (kDown & HidNpadButton_A)
             if (isApp)
                 openYoutube();
         consoleUpdate(NULL);
