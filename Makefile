@@ -40,7 +40,7 @@ include $(DEVKITPRO)/libnx/switch_rules
 TARGET		:=	lennytube
 APP_TITLE	:=	Lennytube
 APP_AUTHOR	:=	noirscape
-APP_VERSION	:=	1.0
+APP_VERSION	:=	1.1
 BUILD		:=	build
 SOURCES		:=	source
 DATA		:=	data
